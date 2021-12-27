@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         binding.googleSignInBtn.setOnClickListener {
             Log.d(TAG,"onCreate:begin Google SignIn")
             val intent = googleSignInClient.signInIntent
+            //packageManager.getLaunchIntentForPackage("com.android.chrome")
             startActivityForResult(intent, RC_SIGN_IN)
         }
     }
@@ -67,7 +68,6 @@ val firebaseUser =firebaseAuth.currentUser
             }
         }
     }
-
     private fun firebaseAuthWithGoogleAccount(account: GoogleSignInAccount?) {
  Log.d(TAG, "firebaseAuthWithGoogleAccount:begin firebase auth with google account")
 
