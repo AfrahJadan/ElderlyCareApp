@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.afrahjadan.elderlycareapp.databinding.FragmentAddMedicineInfoBinding
+import com.afrahjadan.elderlycareapp.databinding.FragmentAddAppointmentInfoBinding
 
+class AddAppointmentInfoFragment : Fragment() {
 
-class AddMedicineInfoFragment : Fragment() {
-
-    private lateinit var binding: FragmentAddMedicineInfoBinding
-
+    private lateinit var binding: FragmentAddAppointmentInfoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,17 +19,16 @@ class AddMedicineInfoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         // Inflate the layout for this fragment
-        // return inflater.inflate(R.layout.fragment_add_medicine_info, container, false)
-        binding = FragmentAddMedicineInfoBinding.inflate(layoutInflater)
-        binding.SaveToAddBtnMed.setOnClickListener {
+        binding = FragmentAddAppointmentInfoBinding.inflate(inflater, container, false)
+        binding.SaveToAddBtnApp.setOnClickListener {
             val action =
-                AddMedicineInfoFragmentDirections.actionAddMedicineInfoFragmentToViewAndAddMedicineFragment()
+                AddAppointmentInfoFragmentDirections.actionAddAppointmentInfoFragmentToViewAndAddAppointmentFragment()
             findNavController().navigate(action)
         }
-        return binding.root
 
+        return binding.root
     }
 
 }

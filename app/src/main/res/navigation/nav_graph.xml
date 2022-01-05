@@ -20,8 +20,11 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment2_to_addMedicineInfoFragment"
-            app:destination="@id/addMedicineInfoFragment" />
+            android:id="@+id/action_homeFragment2_to_viewAndAddMedicineFragment"
+            app:destination="@id/viewAndAddMedicineFragment" />
+        <action
+            android:id="@+id/action_homeFragment2_to_viewAndAddAppointmentFragment"
+            app:destination="@id/viewAndAddAppointmentFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -45,5 +48,23 @@
         <action
             android:id="@+id/action_viewAndAddMedicineFragment_to_addMedicineInfoFragment"
             app:destination="@id/addMedicineInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewAndAddAppointmentFragment"
+        android:name="com.afrahjadan.elderlycareapp.fragment.ViewAndAddAppointmentFragment"
+        android:label="fragment_view_and_add_appointment"
+        tools:layout="@layout/fragment_view_and_add_appointment" >
+        <action
+            android:id="@+id/action_viewAndAddAppointmentFragment_to_addAppointmentInfoFragment"
+            app:destination="@id/addAppointmentInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addAppointmentInfoFragment"
+        android:name="com.afrahjadan.elderlycareapp.fragment.AddAppointmentInfoFragment"
+        android:label="fragment_add_appointment_info"
+        tools:layout="@layout/fragment_add_appointment_info" >
+        <action
+            android:id="@+id/action_addAppointmentInfoFragment_to_viewAndAddAppointmentFragment"
+            app:destination="@id/viewAndAddAppointmentFragment" />
     </fragment>
 </navigation>

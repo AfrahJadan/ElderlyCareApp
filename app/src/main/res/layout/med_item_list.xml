@@ -6,7 +6,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="15dp">
+    android:layout_margin="14dp">
 
 <com.google.android.material.card.MaterialCardView
     android:id="@+id/med_card"
@@ -14,15 +14,16 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     app:cardBackgroundColor="#E3E7B3"
-    app:cardCornerRadius="20dp"
-    app:cardElevation="30dp"
-    app:contentPadding="10dp"
+    android:clickable="true"
+    android:foreground="?selectableItemBackground"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    app:contentPadding="6dp"
     tools:ignore="MissingConstraints">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       android:orientation="vertical"
-        >
+        android:layout_height="wrap_content"
+       android:orientation="vertical">
 
         <TextView
             android:id="@+id/medShow"
@@ -43,7 +44,8 @@
             android:padding="10dp"
             android:text="Dose"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="ObsoleteLayoutParam" />
 
         <TextView
             android:id="@+id/timeMed"

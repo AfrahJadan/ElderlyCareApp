@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.afrahjadan.elderlycareapp.R
 import com.afrahjadan.elderlycareapp.data.MedicineItem
 
-class MedAdapter(private val medList:List<MedicineItem>):RecyclerView.Adapter<MedAdapter.MedViewHolder>() {
+class MedAdapter(private val medList:ArrayList<MedicineItem>):RecyclerView.Adapter<MedAdapter.MedViewHolder>() {
+
 
     class MedViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
        val medShow:TextView =itemView.findViewById(R.id.medShow)

@@ -5,20 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.afrahjadan.elderlycareapp.R
-import com.afrahjadan.elderlycareapp.data.MedicineItem
-import com.afrahjadan.elderlycareapp.databinding.FragmentViewAndAddMedicineBinding
+import com.afrahjadan.elderlycareapp.appoitmentAdapter.AppAdapter
+import com.afrahjadan.elderlycareapp.data.AppointmentItem
+import com.afrahjadan.elderlycareapp.databinding.FragmentViewAndAddAppointmentBinding
 import com.afrahjadan.elderlycareapp.medicineAdapter.MedAdapter
 
-class ViewAndAddMedicineFragment : Fragment() {
+class ViewAndAddAppointmentFragment : Fragment() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<MedAdapter.MedViewHolder>? = null
-    private lateinit var binding: FragmentViewAndAddMedicineBinding
+    private var adapter: RecyclerView.Adapter<AppAdapter.AppViewHolder>? = null
+
+    private lateinit var binding: FragmentViewAndAddAppointmentBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +30,10 @@ class ViewAndAddMedicineFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentViewAndAddMedicineBinding.inflate(inflater, container, false)
-        binding.medAdd.setOnClickListener {
+        binding = FragmentViewAndAddAppointmentBinding.inflate(inflater, container, false)
+        binding.appAdd.setOnClickListener {
             val action =
-                ViewAndAddMedicineFragmentDirections.actionViewAndAddMedicineFragmentToAddMedicineInfoFragment()
+                ViewAndAddAppointmentFragmentDirections.actionViewAndAddAppointmentFragmentToAddAppointmentInfoFragment()
             findNavController().navigate(action)
         }
         return binding.root
@@ -40,21 +41,17 @@ class ViewAndAddMedicineFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val medItem = arrayListOf(
-            MedicineItem("dite", 3, "once"),
-            MedicineItem("dite", 3, "once"),
-            MedicineItem("dite", 3, "once"),
-            MedicineItem("dite", 3, "once"),
-            MedicineItem("dite", 3, "once"),
-            MedicineItem("dite", 3, "once")
-
+        val appItem = arrayListOf(
+            AppointmentItem("02/01/2021", "06:00am", "For BP", "Dallah Hospital"),
+            AppointmentItem("02/01/2021", "06:00am", "For BP", "Dallah Hospital"),
+            AppointmentItem("02/01/2021", "06:00am", "For BP", "Dallah Hospital"),
+            AppointmentItem("02/01/2021", "06:00am", "For BP", "Dallah Hospital")
         )
-        binding.recycleMed.apply {
+        binding.recycleApp.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = MedAdapter(medItem)
+            adapter = AppAdapter(appItem)
         }
-
     }
+
 
 }
