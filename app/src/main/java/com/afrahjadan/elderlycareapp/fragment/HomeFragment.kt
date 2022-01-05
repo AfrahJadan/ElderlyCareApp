@@ -19,12 +19,16 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
        // return inflater.inflate(R.layout.fragment_home, container, false)
         binding = FragmentHomeBinding.inflate(layoutInflater)
         binding.btnMed.setOnClickListener {
-            val action = HomeFragmentDirections.actionHomeFragment2ToAddMedicineInfoFragment()
+            val action = HomeFragmentDirections.actionHomeFragment2ToViewAndAddMedicineFragment()
+            findNavController().navigate(action)
+        }
+        binding.btnApp.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragment2ToViewAndAddAppointmentFragment()
             findNavController().navigate(action)
         }
         return binding.root
