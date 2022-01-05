@@ -11,39 +11,29 @@ import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity() {
 
-
-
     private lateinit var binding:ActivityHomeBinding
     private lateinit var firebaseAuth:FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding= ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firebaseAuth =FirebaseAuth.getInstance()
         checkUser()
 
-        binding.logoutBtn.setOnClickListener {
-            firebaseAuth.signOut()
-            checkUser()
-        }
+//        binding.logoutBtn.setOnClickListener {
+//            firebaseAuth.signOut()
+//            checkUser()
+//        }
 
-//        val homeFragment =HomeFragment()//here
-//        val profileFragment = ProfileFragment()
-//makeCurrentFragment(homeFragment)
+
 
         val btnNavView =findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController =findNavController(R.id.HomeNavigationFragment)
         btnNavView.setupWithNavController(navController)
-    }
-////here
-//    private fun makeCurrentFragment(fragment:Fragment){
-//        supportFragmentManager.beginTransaction().apply {
-//            replace(R.id.HomeNavigationFragment, fragment)
-//            commit()
-//        }
-//    }
 
+    }
     private fun checkUser() {
        val firebaseUser = firebaseAuth.currentUser
         if(firebaseUser == null){
@@ -52,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
         }
         else{
             val email = firebaseUser.email
-          //  binding.emailTv.text =email
+      //      binding.emailTv.text =email
         }
 
     }

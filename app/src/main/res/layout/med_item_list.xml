@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp">
+
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/med_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="#E3E7B3"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="30dp"
+    app:contentPadding="10dp"
+    tools:ignore="MissingConstraints">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/medShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:padding="10dp"
+            android:text="Medicine Type"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dozMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/medShow"
+            android:layout_marginStart="40sp"
+            android:padding="10dp"
+            android:text="Dose"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/timeMed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dozMed"
+            android:layout_marginStart="40sp"
+            android:padding="10dp"
+            android:text="Time"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="4dp"
+            android:background="#D77948"
+            android:layout_below="@+id/timeMed"/>
+
+    </LinearLayout>
+
+<!--        <CheckBox-->
+<!--            android:id="@+id/medCH"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/timeMed"-->
+<!--            android:layout_marginStart="40sp"-->
+<!--            android:text="Medicine Taken"-->
+<!--            android:textStyle="bold"-->
+<!--            android:enabled="true"-->
+<!--            android:checked="true"/>-->
+</com.google.android.material.card.MaterialCardView>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

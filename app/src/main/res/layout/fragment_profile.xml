@@ -1,15 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.ProfileFragment">
 
+
     <TextView
+        android:id="@+id/textView"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="155dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="64dp"
+        android:text="You're LoggedIn as"
+        android:textColor="#5F685A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/emailTv"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="261dp"
+        android:layout_height="50dp"
+        android:text="Email"
+        android:textColor="#AA512F"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="115dp" />
+
+    <Button
+        android:id="@+id/logoutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Profile"
-        android:textSize="40sp"
-        android:layout_marginTop="350dp"/>
+        android:layout_marginTop="56dp"
+        android:text="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
+
+    <EditText
+        android:id="@+id/UserEt"
+        android:minWidth="300dp"
+        android:layout_width="310dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:drawableStart="@drawable/ic_baseline_health_and_safety_24"
+        android:hint="Health Status"
+        android:minHeight="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="370dp"-->
+<!--        android:layout_height="298dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        app:cardCornerRadius="24dp"-->
+<!--        app:contentPadding="30dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/button"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/emailTv">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:isScrollContainer="false"-->
+<!--                android:paddingStart="6dp"-->
+<!--                android:paddingEnd="6dp">-->
+
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="238dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:layout_marginBottom="24dp"-->
+<!--                    android:background="#E3E7B3"-->
+<!--                    android:drawableStart="@drawable/ic_baseline_health_and_safety_24"-->
+<!--                    android:drawablePadding="10dp"-->
+<!--                    android:hint="Health Status"-->
+<!--                    android:textColor="#AA512F" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+<!--        </LinearLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
