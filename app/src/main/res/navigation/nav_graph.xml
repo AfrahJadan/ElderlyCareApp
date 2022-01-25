@@ -121,4 +121,8 @@
             android:id="@+id/action_editProfileFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.afrahjadan.elderlycareapp.prefrence.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>
